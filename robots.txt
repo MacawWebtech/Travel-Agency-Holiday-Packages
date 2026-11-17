@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /pages/dashboard/
+Disallow: /pages/booking.html
+
+Sitemap: https://www.wanderlyholidays.com/sitemap.xml

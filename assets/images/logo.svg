@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-label="Wanderly Holidays">
+  <g transform="translate(4 4)"><circle cx="20" cy="20" r="20" fill="#f5b800"/><circle cx="26" cy="13" r="4.5" fill="#fff"/><path d="M4 25c4-3 8-3 12 0s8 3 12 0 6-2 8-1v6a18 18 0 0 1-32 2z" fill="#111"/><path d="M8 21l10-9 6 6 4-3 6 6" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="54" y="28" font-family="DM Serif Display, Georgia, serif" font-size="24" fill="#111">Wanderly</text>
+  <text x="55" y="42" font-family="DM Sans, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="#111">HOLIDAYS</text>
+</svg>

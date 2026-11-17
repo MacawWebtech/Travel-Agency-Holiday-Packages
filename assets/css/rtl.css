@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Wanderly Holidays – RTL Support (Arabic / Hebrew)
+   Activated by <html dir="rtl">. Custom components already use logical
+   properties (inset-inline, margin-inline, padding-inline), so this file
+   mainly mirrors Bootstrap's physical utilities and directional icons.
+   TODO: For production Arabic sites you may prefer bootstrap.rtl.min.css
+   and an Arabic-capable font (e.g. "Noto Kufi Arabic").
+   ========================================================================== */
+[dir="rtl"] body { text-align: right; }
+
+/* Bootstrap spacing utilities (ms/me/ps/pe) */
+[dir="rtl"] .ms-auto { margin-right: auto !important; margin-left: 0 !important; }
+[dir="rtl"] .me-auto { margin-left: auto !important; margin-right: 0 !important; }
+[dir="rtl"] .ms-1 { margin-right: .25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-2 { margin-right: .5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .me-1 { margin-left: .25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: .5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ps-0 { padding-right: 0 !important; }
+[dir="rtl"] .ps-3 { padding-right: 1rem !important; padding-left: 0 !important; }
+[dir="rtl"] .pe-3 { padding-left: 1rem !important; padding-right: 0 !important; }
+
+/* Text alignment */
+[dir="rtl"] .text-start { text-align: right !important; }
+[dir="rtl"] .text-end { text-align: left !important; }
+@media (min-width: 768px) {
+  [dir="rtl"] .text-md-start { text-align: right !important; }
+  [dir="rtl"] .text-md-end { text-align: left !important; }
+}
+@media (min-width: 992px) {
+  [dir="rtl"] .text-lg-start { text-align: right !important; }
+  [dir="rtl"] .text-lg-end { text-align: left !important; }
+}
+
+/* Floats & borders */
+[dir="rtl"] .float-start { float: right !important; }
+[dir="rtl"] .float-end { float: left !important; }
+[dir="rtl"] .border-start { border-left: 0 !important; border-right: var(--bs-border-width) solid var(--bs-border-color) !important; }
+[dir="rtl"] .border-end { border-right: 0 !important; border-left: var(--bs-border-width) solid var(--bs-border-color) !important; }
+
+/* Components */
+[dir="rtl"] .dropdown-menu { text-align: right; }
+[dir="rtl"] .dropdown-menu-end { right: auto !important; left: 0 !important; }
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item { padding-left: 0; padding-right: var(--bs-breadcrumb-item-padding-x); }
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before { float: right; padding-right: 0; padding-left: var(--bs-breadcrumb-item-padding-x); }
+[dir="rtl"] .form-select { background-position: left .75rem center; padding-right: .75rem; padding-left: 2.25rem; }
+[dir="rtl"] .form-check { padding-left: 0; padding-right: 1.5em; }
+[dir="rtl"] .form-check .form-check-input { float: right; margin-left: 0; margin-right: -1.5em; }
+[dir="rtl"] .form-switch { padding-right: 2.5em; }
+[dir="rtl"] .form-switch .form-check-input { margin-right: -2.5em; }
+[dir="rtl"] .wh-filter-group .form-check { padding-right: 0; }
+[dir="rtl"] .wh-filter-group .form-check-input, [dir="rtl"] .wh-addon .form-check-input { margin: 0; float: none; }
+[dir="rtl"] .accordion-button::after { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .input-group > :not(:first-child) { border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius); margin-left: 0; margin-right: calc(var(--bs-border-width) * -1); }
+[dir="rtl"] .input-group > :not(:last-child) { border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0; }
+[dir="rtl"] .modal-header .btn-close { margin: calc(-.5 * var(--bs-modal-header-padding-y)) auto calc(-.5 * var(--bs-modal-header-padding-y)) calc(-.5 * var(--bs-modal-header-padding-x)); }
+[dir="rtl"] .list-unstyled, [dir="rtl"] ul, [dir="rtl"] ol { padding-right: 0; }
+[dir="rtl"] .wh-prose ul, [dir="rtl"] .wh-prose ol { padding-right: 1.5rem; padding-left: 0; }
+[dir="rtl"] .wh-nav .nav-link[aria-current="page"]::after { inset-inline: .9rem; }
+
+/* Directional icons flip */
+[dir="rtl"] .bi-arrow-right::before, [dir="rtl"] .bi-arrow-left::before,
+[dir="rtl"] .bi-chevron-right::before, [dir="rtl"] .bi-chevron-left::before,
+[dir="rtl"] .bi-arrow-right-short::before, [dir="rtl"] .bi-box-arrow-right::before,
+[dir="rtl"] .bi-send::before, [dir="rtl"] .bi-arrow-up-right::before { display: inline-block; transform: scaleX(-1); }
+
+/* Number-heavy UI stays LTR for readability */
+[dir="rtl"] .wh-ltr, [dir="rtl"] input[type="tel"], [dir="rtl"] input[type="email"] { direction: ltr; text-align: right; }

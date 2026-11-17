@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Wanderly Holidays – Dark Mode (true black)
+   Activated by <html data-theme="dark"> (set by main.js from localStorage
+   or the system preference). Bootstrap's data-bs-theme is set alongside it.
+   The single yellow primary stays the same; text links and icons switch
+   to yellow because yellow on black has very high contrast.
+   TODO: Adjust dark palette tokens here.
+   ========================================================================== */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --wh-primary: #f5b800;
+  --wh-primary-600: #ffc933;
+  --wh-primary-700: #000000;      /* deep surfaces become pure black */
+  --wh-primary-100: #2e2400;
+  --wh-primary-50: #1a1500;
+  --wh-primary-ink: #f5b800;      /* links & icons: yellow on black (11:1) */
+  --wh-on-primary: #000000;
+  --wh-secondary: #ffd24d;
+  --wh-secondary-100: #0d0d0d;
+  --wh-focus: #ffd24d;
+
+  --wh-ink: #f5f5f5;
+  --wh-body: #cfcfcf;
+  --wh-muted: #a3a3a3;
+  --wh-line: #262626;
+  --wh-input-border: #3d3d3d;
+  --wh-surface: #0d0d0d;
+  --wh-surface-2: #050505;
+  --wh-surface-3: #1a1a1a;
+  --wh-bg: #000000;
+  --wh-star: #f5b800;
+
+  --wh-success: #5fd394; --wh-success-bg: #0f2a1a;
+  --wh-warning: #ffd24d; --wh-warning-bg: #2e2400;
+  --wh-error: #ff8a80;   --wh-error-bg: #3a1a17;
+  --wh-info: #d6d6d6;    --wh-info-bg: #1f1f1f;
+
+  --wh-shadow-sm: 0 1px 2px rgba(0, 0, 0, .6);
+  --wh-shadow: 0 8px 24px rgba(0, 0, 0, .7);
+  --wh-shadow-lg: 0 24px 48px rgba(0, 0, 0, .8);
+
+  --bs-body-color: var(--wh-body);
+  --bs-body-bg: var(--wh-bg);
+  --bs-link-color-rgb: 245, 184, 0;
+  --bs-border-color: var(--wh-line);
+  --bs-emphasis-color: var(--wh-ink);
+  --bs-secondary-bg: var(--wh-surface-3);
+  --bs-tertiary-bg: var(--wh-surface-2);
+}
+
+/* Dark bands: keep them distinguishable from the black page */
+[data-theme="dark"] .wh-topbar,
+[data-theme="dark"] .wh-how-strip,
+[data-theme="dark"] .wh-footer,
+[data-theme="dark"] .wh-side-help,
+[data-theme="dark"] .wh-device,
+[data-theme="dark"] .wh-feature-quote { background-color: #0d0d0d; }
+[data-theme="dark"] .wh-footer, [data-theme="dark"] .wh-topbar { border-top: 1px solid var(--wh-line); }
+[data-theme="dark"] .wh-how-strip .wh-step { background: #141414; border-color: var(--wh-line); }
+[data-theme="dark"] .wh-header { background: rgba(0, 0, 0, .9); }
+[data-theme="dark"] .wh-dash-top { background: rgba(0, 0, 0, .92); }
+[data-theme="dark"] .wh-hero2 { background: linear-gradient(180deg, #0d0d0d 0%, #000 100%); }
+[data-theme="dark"] .wh-newsletter, [data-theme="dark"] .wh-dash-promo { background: #0d0d0d; }
+[data-theme="dark"] .wh-section-sand { background: #080808; }
+[data-theme="dark"] .wh-badge-sand { color: var(--wh-secondary); background: var(--wh-primary-100); }
+[data-theme="dark"] .wh-eyebrow { color: var(--wh-primary); }
+
+/* White chips over photos become black chips */
+[data-theme="dark"] .wh-pkg-badges .wh-badge,
+[data-theme="dark"] .wh-save { background: rgba(0, 0, 0, .85); color: var(--wh-ink); }
+[data-theme="dark"] .wh-pkg-badges .wh-badge-accent { background: var(--wh-primary); color: #000; }
+[data-theme="dark"] .wh-save[aria-pressed="true"] { background: var(--wh-primary); color: #000; }
+[data-theme="dark"] .wh-cat-icon { background: #000; }
+[data-theme="dark"] .wh-float { border: 1px solid var(--wh-line); }
+
+/* Yellow marker in Home 2 headline keeps dark text */
+[data-theme="dark"] .wh-hero2 h1 em { color: #000; padding-inline: .1em; background: var(--wh-primary); border-radius: 6px; }
+
+/* Buttons */
+[data-theme="dark"] .btn-ink { --bs-btn-color: #000; --bs-btn-bg: #f5f5f5; --bs-btn-border-color: #f5f5f5; --bs-btn-hover-bg: #fff; }
+[data-theme="dark"] .btn-light { --bs-btn-color: #000; --bs-btn-bg: #f5f5f5; --bs-btn-border-color: #f5f5f5; }
+[data-theme="dark"] .pagination { --bs-pagination-bg: var(--wh-surface); --bs-pagination-border-color: var(--wh-line); --bs-pagination-hover-bg: var(--wh-surface-3); --bs-pagination-disabled-bg: var(--wh-surface); }
+
+/* Form controls */
+[data-theme="dark"] .form-control, [data-theme="dark"] .form-select {
+  background-color: var(--wh-surface-3); border-color: var(--wh-input-border); color: var(--wh-ink);
+}
+[data-theme="dark"] .form-control:focus, [data-theme="dark"] .form-select:focus { border-color: var(--wh-primary); }
+[data-theme="dark"] .form-control::placeholder { color: #8c8c8c; }
+[data-theme="dark"] .form-select { --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23cfcfcf' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); }
+[data-theme="dark"] .form-check-input { background-color: var(--wh-surface-3); border-color: #555; }
+[data-theme="dark"] .form-check-input:checked { background-color: var(--wh-primary); border-color: var(--wh-primary); }
+[data-theme="dark"] .accordion { --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23cfcfcf' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e"); --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23f5b800' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e"); --bs-accordion-bg: var(--wh-surface); --bs-accordion-color: var(--wh-body); --bs-accordion-border-color: var(--wh-line); }
+[data-theme="dark"] .table { --bs-table-bg: var(--wh-surface); --bs-table-color: var(--wh-body); --bs-table-border-color: var(--wh-line); --bs-table-striped-bg: var(--wh-surface-2); --bs-table-hover-bg: var(--wh-surface-3); --bs-table-hover-color: var(--wh-ink); }
+[data-theme="dark"] .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+[data-theme="dark"] .dropdown-menu { --bs-dropdown-bg: var(--wh-surface); --bs-dropdown-link-color: var(--wh-ink); }
+[data-theme="dark"] .skeleton::after { background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .06), transparent); }
+[data-theme="dark"] img { filter: brightness(.9); }
+[data-theme="dark"] .wh-logo-mark { filter: none; }
+
+/* Smooth theme switch (disabled for reduced motion in style.css) */
+html.wh-theme-anim, html.wh-theme-anim * { transition: background-color .3s ease, border-color .3s ease, color .3s ease !important; }
+
+
+/* Readable secondary copy and card content in dark mode */
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .wh-dash-card .text-muted {
+  color: #b8b8b8 !important;
+}
+[data-theme="dark"] .wh-dash-card {
+  color: var(--wh-body);
+}
+[data-theme="dark"] .wh-dash-card h3,
+[data-theme="dark"] .wh-dash-card h4,
+[data-theme="dark"] .wh-dash-card strong {
+  color: var(--wh-ink);
+}
+[data-theme="dark"] .wh-newsletter h1,
+[data-theme="dark"] .wh-newsletter h2,
+[data-theme="dark"] .wh-newsletter h3 {
+  color: var(--wh-ink);
+}
+[data-theme="dark"] .wh-newsletter p {
+  color: var(--wh-body);
+}
+
+
+/* Home 2 newsletter CTA: keep all copy readable on the yellow band in dark mode */
+[data-theme="dark"] .wh-cta-band,
+[data-theme="dark"] .wh-cta-band p,
+[data-theme="dark"] .wh-cta-band .wh-eyebrow,
+[data-theme="dark"] .wh-cta-band h2,
+[data-theme="dark"] .wh-cta-band a:not(.btn) {
+  color: #000000 !important;
+}
+[data-theme="dark"] .wh-cta-band .wh-eyebrow::before {
+  background-color: #000000 !important;
+}

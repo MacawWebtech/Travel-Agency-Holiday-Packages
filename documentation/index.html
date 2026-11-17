@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation | Wanderly Holidays HTML Template</title>
+  <meta name="description" content="Installation, customization, page structure, integrations, credits and changelog for the Wanderly Holidays travel agency HTML template built on Bootstrap 5.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .doc-nav { position: sticky; top: 24px; }
+    .doc-nav a { display: block; padding: .4rem .75rem; border-radius: 8px; text-decoration: none; color: var(--wh-ink); font-weight: 600; font-size: .95rem; }
+    .doc-nav a:hover { background: var(--wh-primary-50); color: var(--wh-primary); }
+    .doc section { padding-block: 2rem; border-bottom: 1px solid var(--wh-line); }
+    .doc h2 { font-size: 2rem; }
+    .doc h3 { font-size: 1.25rem; margin-top: 1.5rem; font-family: var(--wh-font-body); font-weight: 700; }
+    pre { background: #111; color: #f2f2f2; padding: 1rem 1.25rem; border-radius: 12px; font-size: .875rem; overflow-x: auto; }
+    code { color: var(--wh-accent-600); }
+    pre code { color: inherit; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="wh-how-strip py-5">
+    <div class="container">
+      <p class="wh-eyebrow">Version 1.2.0 · Updated 16 Nov 2026</p>
+      <h1 class="text-white">Wanderly Holidays – Documentation</h1>
+      <p class="lead mb-0" style="color:#bfbfbf">Everything you need to install, customize and launch the template.</p>
+    </div>
+  </header>
+  <div class="container py-5">
+    <div class="row g-5">
+      <nav class="col-lg-3" aria-label="Documentation sections">
+        <div class="doc-nav">
+          <a href="#install">1. Installation</a>
+          <a href="#structure">2. File structure</a>
+          <a href="#pages">3. Page list</a>
+          <a href="#colors">4. Colors &amp; fonts</a>
+          <a href="#content">5. Content &amp; packages</a>
+          <a href="#images">6. Images</a>
+          <a href="#forms">7. Forms &amp; integrations</a>
+          <a href="#dark-rtl">8. Dark mode &amp; RTL</a>
+          <a href="#a11y">9. Accessibility</a>
+          <a href="#seo">10. SEO &amp; performance</a>
+          <a href="#credits">11. Credits</a>
+          <a href="#changelog">12. Changelog</a>
+          <a href="#support">13. Support</a>
+        </div>
+      </nav>
+      <main id="main" class="col-lg-9 doc" tabindex="-1">
+        <section id="install" aria-labelledby="h-install">
+          <h2 id="h-install">1. Installation</h2>
+          <p>No build tools are required. Bootstrap 5.3, Bootstrap Icons and Google Fonts load from CDNs.</p>
+          <ol>
+            <li>Unzip <code>wanderly-holidays.zip</code>.</li>
+            <li>Open <code>pages/index.html</code> directly, or run a local server so <code>localStorage</code> and form features behave like production:
+<pre><code>cd wanderly-holidays
+python3 -m http.server 8080
+# open http://localhost:8080/pages/index.html</code></pre></li>
+            <li>Upload the full folder to your host. The root <code>index.html</code> redirects to <code>pages/index.html</code>. If your host lets you set a document root, you can also move the pages to the root and update the relative paths.</li>
+          </ol>
+        </section>
+
+        <section id="structure" aria-labelledby="h-structure">
+          <h2 id="h-structure">2. File structure</h2>
+<pre><code>wanderly-holidays/
+├── index.html              → redirects to pages/index.html
+├── sitemap.xml, robots.txt
+├── assets/
+│   ├── css/  style.css (design system + components) · dark-mode.css · rtl.css
+│   ├── js/   main.js (site) · dashboard.js (dashboard) · plugins/packages.js (data)
+│   ├── images/ favicon.svg · logo.svg · og-image.jpg
+│   └── fonts/  README.txt (how to self-host)
+├── pages/
+│   ├── index.html, index-2.html … coming-soon.html (15 public pages)
+│   └── dashboard/ index · bookings · itineraries · saved · tickets · messages · profile
+├── documentation/index.html
+└── README.md</code></pre>
+          <p><code>style.css</code> is organised into 20 numbered sections (tokens, base, buttons, header, hero, cards, listings, details, forms, booking, dashboard, utilities, breakpoints). <code>main.js</code> is split into 12 documented modules.</p>
+        </section>
+
+        <section id="pages" aria-labelledby="h-pages">
+          <h2 id="h-pages">3. Page list</h2>
+          <div class="table-responsive"><table class="table wh-table">
+            <thead><tr><th scope="col">Page</th><th scope="col">Main sections</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">index.html (Home – Classic)</th><td>Hero + 5-field search, How It Works, 4 category cards, top destinations, featured packages, why choose us (stats, trust badges), testimonials, offer banner with countdown, guides, newsletter</td></tr>
+              <tr><th scope="row">index-2.html (Home – Explorer)</th><td>Split hero with tabbed search (holiday packages or custom-trip request), trust strip, browse by interest, trending packages carousel, holidays by budget, domestic vs international panels, 4-step planner with expert card, dashboard preview with stats, featured testimonial, FAQ + guides, offer/newsletter band</td></tr>
+              <tr><th scope="row">domestic-packages.html</th><td>Filter sidebar (search, region, duration, price, theme), sort, package grid with skeletons. Accepts <code>?dest=&amp;duration=&amp;budget=&amp;theme=&amp;region=</code>.</td></tr>
+              <tr><th scope="row">international-packages.html</th><td>Same layout plus visa and flights-included filters and badges</td></tr>
+              <tr><th scope="row">honeymoon-family-tours.html</th><td>Tabs: Honeymoon Escapes (romantic perks) and Family Tours (kid-friendly, group size, activity level). <code>?tab=family</code> opens the family tab.</td></tr>
+              <tr><th scope="row">package-details.html</th><td>Gallery + lightbox, facts, sub-nav, itinerary accordion, inclusions/exclusions, hotels, pricing table, reviews, FAQs, sticky booking summary, related packages. Reads <code>?id=</code> from packages.js.</td></tr>
+              <tr><th scope="row">booking.html</th><td>5 steps: trip, travelers, add-ons, payment placeholder, confirmation. Reads <code>?id=&amp;adults=&amp;kids=</code>.</td></tr>
+              <tr><th scope="row">about.html</th><td>Story, stats, mission/vision/promise, team, certifications, testimonials</td></tr>
+              <tr><th scope="row">blog.html / blog-details.html</th><td>Search, category filter, pagination, sidebar; article with share links, related posts and comment form</td></tr>
+              <tr><th scope="row">contact.html</th><td>Contact cards, validated form (Formspree/Netlify), map placeholder, hours, social links</td></tr>
+              <tr><th scope="row">offers.html</th><td>Seasonal deals and promo codes, sale grid, Essential/Comfort/Luxury tiers, comparison table, FAQ</td></tr>
+              <tr><th scope="row">login.html</th><td>Log in / Create account tabs, social login placeholders, forgot password</td></tr>
+              <tr><th scope="row">404.html / coming-soon.html</th><td>Error page with search and links; coming soon / maintenance with countdown and notify form</td></tr>
+              <tr><th scope="row">dashboard/*</th><td>Overview, My Bookings (table on desktop, cards on mobile, status filter), Itineraries (printable), Saved Packages, Tickets &amp; Invoices, Messages (chat), Profile &amp; Settings, Logout</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="colors" aria-labelledby="h-colors">
+          <h2 id="h-colors">4. Colors &amp; fonts</h2>
+          <p>All colors, spacing, radii and shadows are CSS variables at the top of <code>assets/css/style.css</code>:</p>
+<pre><code>:root {
+  --wh-primary: #f5b800;      /* the ONE brand colour (yellow) – buttons, highlights, active states */
+  --wh-primary-600: #e0a800;  /* hover / pressed shade */
+  --wh-primary-ink: #111111;  /* links &amp; icons (black in light mode, yellow in dark mode) */
+  --wh-on-primary: #111111;   /* text placed on yellow */
+  --wh-font-display: "DM Serif Display", Georgia, serif;
+  --wh-font-body: "DM Sans", system-ui, sans-serif;
+}</code></pre>
+          <p>The palette uses a single primary colour plus black/grey neutrals. Green and red are kept only for success and error messages. Dark mode (<code>dark-mode.css</code>) uses a true black background and keeps the same yellow, with links and icons switching to yellow. Keep text contrast at 4.5:1 or higher when changing colors (check with the WebAIM contrast checker).</p>
+          <h3>Changing fonts</h3>
+          <p>Replace the Google Fonts <code>&lt;link&gt;</code> in each page head and update the two font variables. To self-host, see <code>assets/fonts/README.txt</code>.</p>
+          <h3>Spacing</h3>
+          <p>Spacing follows an 8px scale: <code>--wh-space-1</code> (8px) to <code>--wh-space-12</code> (96px).</p>
+        </section>
+
+        <section id="content" aria-labelledby="h-content">
+          <h2 id="h-content">5. Content &amp; packages</h2>
+          <p>Package grids, details, booking summary and the dashboard all read from <code>assets/js/plugins/packages.js</code>:</p>
+<pre><code>{ "id": "kerala-backwaters", "title": "Kerala Backwaters &amp; Hills",
+  "dest": "Munnar, Alleppey, Kochi", "place": "Kerala", "region": "South India",
+  "cat": "domestic", "theme": "hills", "tags": ["honeymoon", "family"],
+  "days": 6, "nights": 5, "price": 28990, "old": 33500,
+  "rating": 4.8, "reviews": 412,
+  "incl": ["hotel", "meals", "sightseeing", "transfers"],
+  "visa": null, "flight": false, "seed": "wh-kerala-houseboat", "alt": "…" }</code></pre>
+          <ul>
+            <li><strong>Region</strong> values must match the filter checkbox values in the listing pages.</li>
+            <li><strong>Currency:</strong> edit <code>money()</code> in <code>main.js</code> (default <code>en-IN</code> / <code>INR</code>).</li>
+            <li><strong>Dashboard data</strong> (bookings, messages) is sample data at the top of <code>dashboard.js</code>. Replace it with API calls.</li>
+            <li>Package details shows hand-written Kerala content by default. Other packages get generated overview, itinerary, inclusions and hotels. Add richer fields to packages.js as needed.</li>
+            <li>Search the code for <code>TODO</code> to find every placeholder.</li>
+          </ul>
+        </section>
+
+        <section id="images" aria-labelledby="h-images">
+          <h2 id="h-images">6. Images</h2>
+          <p>Photos load from <code>https://picsum.photos/seed/&lt;name&gt;/&lt;w&gt;/&lt;h&gt;.webp</code> so the template works out of the box. Each seed is unique per section. Before launch:</p>
+          <ol>
+            <li>Export your photos as WebP at the sizes in each <code>width</code>/<code>height</code> attribute (keep those attributes to prevent layout shift).</li>
+            <li>Put them in <code>assets/images/</code> and replace the <code>src</code> values. In packages.js, update <code>img()</code> in main.js to point at your folder.</li>
+            <li>Write descriptive <code>alt</code> text. Decorative background images use <code>alt=""</code>.</li>
+          </ol>
+          <p>Images below the fold use <code>loading="lazy"</code>; hero images use <code>fetchpriority="high"</code>.</p>
+        </section>
+
+        <section id="forms" aria-labelledby="h-forms">
+          <h2 id="h-forms">7. Forms &amp; integrations</h2>
+          <h3>Validation</h3>
+          <p>Add <code>data-wh-validate novalidate</code> to a form and wrap each control in <code>.wh-field</code> with an <code>.invalid-feedback</code> element. Custom messages: <code>data-msg-required</code>, <code>data-msg-pattern</code>, <code>data-msg-min</code>, <code>data-match="#otherField"</code>. Tooltips use <code>data-bs-toggle="tooltip"</code>.</p>
+          <p>While an action URL still contains <code>YOUR_</code>, forms validate and show a clear "demo mode" message instead of pretending to send.</p>
+          <h3>Formspree</h3>
+          <p>Create a form at formspree.io and replace <code>https://formspree.io/f/YOUR_FORM_ID</code> in contact, booking and blog comment forms.</p>
+          <h3>Netlify Forms</h3>
+          <p>Remove the <code>action</code>, add <code>name="contact" data-netlify="true" netlify-honeypot="bot-field"</code>. The hidden <code>form-name</code> and honeypot fields are already in the contact form. main.js posts Netlify forms with fetch.</p>
+          <h3>Mailchimp newsletter</h3>
+          <p>Replace <code>https://YOUR_ACCOUNT.us1.list-manage.com/subscribe/post?u=YOUR_U&amp;id=YOUR_ID</code> (footer, home and coming soon) with your embedded form action. Mailchimp's endpoint does not allow fetch from other domains, so either remove <code>data-wh-validate</code> to submit normally or use the <code>post-json</code> JSONP endpoint.</p>
+          <h3>Google Maps</h3>
+          <p>In <code>contact.html</code>, paste your Google Maps embed iframe inside <code>.wh-map</code> (a commented example is there) and delete the placeholder.</p>
+          <h3>Booking calendar</h3>
+          <p>The start date uses the native date picker with a minimum of 7 days ahead. To show live availability, swap <code>#bDate</code> for your calendar widget (e.g. a Flatpickr instance fed by your API) and keep the <code>.wh-field</code> wrapper.</p>
+          <h3>Stripe &amp; PayPal</h3>
+          <p>Step 4 of <code>booking.html</code> contains two radio placeholders. For production:</p>
+          <ul>
+            <li><strong>Stripe:</strong> create a Checkout Session on your server and redirect, or mount the Payment Element in place of the Stripe option.</li>
+            <li><strong>PayPal:</strong> load the PayPal JS SDK and render Smart Buttons into a container in step 4.</li>
+            <li>Only show the confirmation step after your server confirms the payment or booking request.</li>
+          </ul>
+          <h3>Login</h3>
+          <p>The login form uses <code>data-demo-login</code> to open the sample dashboard. Replace it with your auth provider and protect <code>pages/dashboard/</code> on the server.</p>
+        </section>
+
+        <section id="dark-rtl" aria-labelledby="h-dark">
+          <h2 id="h-dark">8. Dark mode &amp; RTL</h2>
+          <p>A small inline script in each <code>&lt;head&gt;</code> applies the saved theme and direction before the page paints. Toggles use <code>data-theme-toggle</code> and <code>data-dir-toggle</code>. Storage keys: <code>wanderly-theme</code>, <code>wanderly-dir</code>, <code>wanderly-saved</code>.</p>
+          <p>To launch an Arabic or Hebrew site by default, set <code>&lt;html lang="ar" dir="rtl"&gt;</code>. Custom components use logical CSS properties; <code>rtl.css</code> mirrors Bootstrap utilities and directional icons.</p>
+        </section>
+
+        <section id="a11y" aria-labelledby="h-a11y">
+          <h2 id="h-a11y">9. Accessibility</h2>
+          <ul>
+            <li>Skip link, one <code>h1</code> per page and ordered headings</li>
+            <li>Visible 3px focus outline, 44px minimum touch targets</li>
+            <li>ARIA labels on icon buttons, <code>aria-live</code> on results, totals and errors, <code>aria-current</code> on navigation</li>
+            <li>Errors linked with <code>aria-describedby</code>; first invalid field receives focus</li>
+            <li><code>prefers-reduced-motion</code> respected; motion reduced on phones</li>
+          </ul>
+        </section>
+
+        <section id="seo" aria-labelledby="h-seo">
+          <h2 id="h-seo">10. SEO &amp; performance</h2>
+          <ul>
+            <li>Unique title (≤60 characters) and meta description (150–160 characters) on every page</li>
+            <li>JSON-LD: TravelAgency (all pages), ItemList + Product/Offer (home, listings, offers), Product + FAQPage (details), Blog/BlogPosting</li>
+            <li>Open Graph and Twitter tags, canonical URLs, <code>sitemap.xml</code>, <code>robots.txt</code> (dashboard disallowed and noindexed)</li>
+            <li>Replace <code>https://www.wanderlyholidays.com</code> with your domain in pages, sitemap and robots</li>
+            <li>For PageSpeed 90+: serve your own compressed WebP images, self-host fonts, and enable caching and compression on your host. Image dimensions are set to keep CLS under 0.1.</li>
+          </ul>
+        </section>
+
+        <section id="credits" aria-labelledby="h-credits">
+          <h2 id="h-credits">11. Credits</h2>
+          <ul>
+            <li>Bootstrap 5.3.3 – MIT License</li>
+            <li>Bootstrap Icons 1.11.3 – MIT License</li>
+            <li>DM Serif Display &amp; DM Sans – SIL Open Font License, via Google Fonts</li>
+            <li>Placeholder photos – Lorem Picsum (Unsplash photographers). Not included in the package; replace before launch.</li>
+          </ul>
+        </section>
+
+        <section id="changelog" aria-labelledby="h-changelog">
+          <h2 id="h-changelog">12. Changelog</h2>
+          <p><strong>1.2.0 – 16 Nov 2026</strong>: New single-colour palette: yellow primary with black text on yellow, teal and coral removed, true black dark mode, new logo mark and OG image.</p>
+          <p><strong>1.1.0 – 16 Nov 2026</strong>: Added Home 2 (Explorer) with trending carousel, interest and budget browsing and custom-trip request form; Home dropdown in the menu; theme/region URL filters.</p>
+          <p><strong>1.0.0 – 14 Nov 2026</strong>: Initial release with 14 public pages, 7 dashboard pages, dark/light mode, RTL, validation, skeleton loaders and documentation.</p>
+        </section>
+
+        <section id="support" aria-labelledby="h-support" class="border-0">
+          <h2 id="h-support">13. Support</h2>
+          <p>Email <a href="mailto:support@wanderlyholidays.com">support@wanderlyholidays.com</a> (placeholder). Please include your browser, the page and steps to reproduce any issue.</p>
+          <a class="btn btn-primary" href="../pages/index.html">Open the template</a>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
